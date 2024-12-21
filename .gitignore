@@ -1,0 +1,47 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+
+# Ignore database files
+db.sqlite3
+
+# Ignore Django migrations
+**/migrations/
+
+# Ignore IDE/editor config files
+*.vscode/
+*.idea/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled code and logs
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# Ignore virtual environment
+venv/
+.env/  # In case someone names their virtual environment `.env`
+
+# Ignore static files
+staticfiles/
+media/
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+*.cover
+*.coverage.*
+
+# Ignore test output
+*.pytest_cache/
+.tox/
+
+# Ignore any other sensitive files
+secrets.json

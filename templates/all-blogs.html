@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Blog Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans antialised">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white flex justify-between">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold">Ai Blog Generator</h1>
+      </div>
+      <div>
+        <a
+          href="#"
+          style="pointer-events: none"
+          class="mr-3 text-gray-400 hover:underline"
+          >Welcome {{user.username}}</a
+        >
+        <a href="/all-blogs" class="mr-3 text-gray-200 hover:underline"
+          >Saved Blogs</a
+        >
+        <a href="#" class="text-white hover:underline">Logout</a>
+      </div>
+    </nav>
+
+    <!-- main container -->
+    <div class="container mx-auto mt-10 px-4 sm:px-0">
+      <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <!-- blog post section -->
+        <section>
+          <h2 class="text-xl mb-4 font-semibold">All Blog Posts</h2>
+          <div class="space-y-4">
+            {% for article in blog_articles reversed %}
+            <a href="/blog-details/{{article.id}}">
+              <div class="border border-gray-300 p-4 rounded-lg cursor-pointer">
+                <h3 class="text-lg font-semibold">{{article.youtube_title}}</h3>
+                <p>{{article.generated_content|truncatechars:80}}</p>
+              </div>
+            </a>
+
+            {% endfor %}
+
+            <!-- repreat -->
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="text-center p-4 text-black mt-6">
+      Developed by Khalid Ahammed
+      <a href="">For Learning purpose</a>
+    </footer>
+  </body>
+</html>
